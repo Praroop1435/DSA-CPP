@@ -1,4 +1,4 @@
-#include<iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int getLength(char arr[]){
@@ -8,6 +8,34 @@ int getLength(char arr[]){
     }
     return count;
 
+}
+char getMaxOccurence(string s){
+    
+    int arr1[26] = {0};
+    // Storing count of letters present in the array 
+    for(int i = 0; i<s.length(); i++){
+        char ch = s[i];
+        int number = 0;
+        
+        if(ch >= 'a' && ch <= 'z'){
+            number = ch - 'a';
+
+        } else {
+            number = ch - 'A';
+        }
+        arr1[number]++;
+    }
+
+    int maxi = -1, ans = -1;
+    for(int i = 0; i<26; i++){
+        if(maxi < arr1[i]) {
+            ans = i;
+            maxi = arr1[i];
+        }
+    }
+
+    char finalAns = 'a'+ans;
+    return finalAns;
 }
 
 void reverse(char arr[],int n){
@@ -44,15 +72,18 @@ bool isPalindrome(string s) {
     }
 
 int main(){
-    char arr[100];
-    cout << "Enter your name :" <<endl;
-    cin >> arr;
-    cout << "Your name is " << arr <<endl;
-    int n = getLength(arr);
-    cout << "Length of your name is " << getLength(arr) <<endl;
-    reverse(arr,n);
-    cout << "Reverse of your name is " << arr <<endl;
+    // char arr[100];
+    // cout << "Enter your name :" <<endl;
+
+    // cin >> arr;
+    // cout << "Your name is " << arr <<endl;
+
+    // int n = getLength(arr);
+    // cout << "Length of your name is " << getLength(arr) <<endl;
+
+    // reverse(arr,n);
+    // cout << "Reverse of your name is " << arr <<endl;
+    string s = "Output";
+    cout << getMaxOccurence(s) <<endl;
     return 0;
-    string s = "My name is Parroop";
-    cout << s <<endl;
 }
