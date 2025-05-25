@@ -4,6 +4,7 @@
         "limits": "cpp",
         "utility": "cpp",
         "xutility": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "iostream": "cpp"
     }
 }
