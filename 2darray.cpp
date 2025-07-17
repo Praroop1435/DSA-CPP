@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 int printSum(int arr[][3],int row,int col){ //Row wise print Biggest sum
